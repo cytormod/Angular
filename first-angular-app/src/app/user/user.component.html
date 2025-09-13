@@ -1,6 +1,10 @@
 <div>
     <button>
-        <img src="" alt="">
-        <span>NAME</span>
+        <img [src]="'assets/users/' + selectedUser.avatar" [alt]="selectedUser.name">
+        <!-- Inside the string interpolation we can now reference any public property  o four component class that we have mention in the class -->
+         <!-- ! String Interpolation {{ ... }} -->
+        <span>{{ selectedUser.name }}</span>
+
+        <!-- ! Property Binding Syntax -->
     </button>
 </div>
