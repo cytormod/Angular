@@ -1,15 +1,15 @@
 <div>
-    <button>
-        <!-- <img [src]="'assets/users/' + selectedUser.avatar" [alt]="selectedUser.name"> -->
-        <!-- Inside the string interpolation we can now reference any public property  o four component class that we have mention in the class -->
-         <!-- ! String Interpolation {{ ... }} -->
-
+    <button (click)="onSelectUser()">
          <img [src]=imagePath [alt]="user_Name">
          <span>{{ selectedUser.name }}</span>
 
+    </button>
+</div>
+
+<!-- <img [src]="'assets/users/' + selectedUser.avatar" [alt]="selectedUser.name"> -->
+        <!-- Inside the string interpolation we can now reference any public property  o four component class that we have mention in the class -->
+         <!-- ! String Interpolation {{ ... }} -->
 
         <!-- The better practice is to keep your template code, the dynamic template code, fairly simple and to outsource computations like this """         <img [src]="'assets/users/' + selectedUser.avatar" [alt]="selectedUser.name">
  """ into different place -->
         <!-- ! Property Binding Syntax -->
-    </button>
-</div>

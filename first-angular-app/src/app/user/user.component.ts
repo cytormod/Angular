@@ -20,6 +20,13 @@ export class UserComponent {
   get user_Name() {
     return this.selectedUser.name
   }
+
+  onSelectUser() {
+    console.log('clicked');
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+    this.selectedUser = DUMMY_USERS[randomIndex]
+    
+  }
 }
 //What's the advantage of writing the code inside the class?
 // We can now access the "selecteduser" Property inside the template of the templateUrl. So all the properties that we are defining in the component class are available in the template of that component
