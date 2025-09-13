@@ -13,7 +13,8 @@ import { Component } from '@angular/core';
     // template: '<h1>Hello World</h1>', In short template defines the mark-up. Also just the template is useful when you want to use just for 1, 2, or 3 line of Markup
     // this is not the recommended way of defining, you should ony use this inline approach where you do it inside of this TS file.
     standalone: true,
-    templateUrl: './header.component.html'
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.css'
 
 })
 
