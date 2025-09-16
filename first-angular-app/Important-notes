@@ -1,0 +1,6 @@
+Signals: we will create Signal value by importing  the Signal function from Angular core.
+Then: create signal value and store it in a property of your component class component.
+
+The idea behind this Signal thing here is that it's in the end a container you could say that contains a value like this """initial dummy user""". And when you then change that value, Angular will be notified about that change. And Angular then is able to identify all the places, for example, in your templates where that value is being used. So where that Signal is being used in the end, and it's then able to update these places.
+
+You are dealing with containers that contain values and that notify Angular whenever those values change, so that angular can then Update the parts of the UI, where those values are used. That can be a very efficient updating mechanism.
