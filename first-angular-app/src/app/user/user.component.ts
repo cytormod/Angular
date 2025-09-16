@@ -43,7 +43,12 @@
 // // What is Getter?
 // // It's essentially a method, so a function inside the class, that's usable like property so that does not need to be called and executed explicitly, and that's meant to produce and return a new value. Here the new value is that Path image.
 
-import { Component, Input } from '@angular/core';
+
+// you can use signals for accepting inputs, instead of using this @Input decorator.
+// How one would accept inputs with signals, so that we do know about both approaches. 
+// With the Upper-case I it's decorator, and with the lowercase "i" it is a special function.
+// One can Replace the Input decorator by still adding properties with the intended names like avatar  as we did it before. But instead of adding a Decorator in front of them, we can now just assign the initial value to these properties. and the value is the result of calling that input function, which internally tells Angular this Avatar Property should be an input to this component, so that it should be set as an attribute, when that component is used
+import { Component, Input, computed, input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -52,15 +57,39 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user.component.css'
 })
 
-export  class UserComponent{
-@Input() avatar!: string;
-@Input() name!: string;
+// ! Here we are using Signal
+// export  class UserComponent{
+// // @Input({required: true}) avatar!: string;
+// // @Input({required: true}) name!: string;
 
-get imagePath() {
-  return 'assets/users/' + this.avatar;
-}
+// // You can also mark an input as required by calling input.required()
+// // avatar = input<string>();
+// avatar = input.required<string>()
+// name = input.required<string>();
 
-  onSelectUser() {
+// // Instead of doing it with the getter, we can now do it with the computed function. so ImagePath should be now computed value
 
+// imagePath = computed(() => {
+//   return 'assets/users/' + this.avatar();
+// });
+// // get imagePath() {
+// //   return 'assets/users/' + this.avatar;
+// // }
+
+//   onSelectUser() {
+
+//   }
+// }
+
+// !!! JUST USE DECORATOR FOR NOW 
+export class UserComponent {
+  @Input ({required: true}) avatar!: string;
+  @Input ({ required: true }) name!: string;
+
+  get imagePath() {
+    return 'assets/users/' + this.avatar;
   }
+
+  onSelectUser() {}
+
 }
