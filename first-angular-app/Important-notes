@@ -5,5 +5,9 @@ The idea behind this Signal thing here is that it's in the end a container you c
 
 You are dealing with containers that contain values and that notify Angular whenever those values change, so that angular can then Update the parts of the UI, where those values are used. That can be a very efficient updating mechanism.
 
-<!-- TO GAIN DEPTH KNOWLEDGE ON -->
+Being able to accept inputs is imp feature and concept in Angular components,because it allows you to reuse components with different data. But Custom components also often need to emit custom events and not just accept inputs. So they need to prosuce outputs as well.
+
+<!-- TODO: GAIN DEPTH KNOWLEDGE ON -->
 Input Decorators and input Signals
+Output Properties.
+How one can Emit his/her own Events with the help of output and how one can then handle them and also get access to the emmitted data

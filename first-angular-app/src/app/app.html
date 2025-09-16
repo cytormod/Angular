@@ -2,20 +2,27 @@
 <main>
   <ul id="users">
     <li>
-      <app-user [avatar]="users[0].avatar" [name]="users[0].name"/>
+      <app-user [id]="users[0].id" [avatar]="users[0].avatar" [name]="users[0].name" (select)="onSelectUser($event)"/>
     </li>
     <li>
-      <app-user [avatar]="users[1].avatar" [name]="users[0].name"/>
+      <app-user [id]="users[1].id" [avatar]="users[1].avatar" [name]="users[0].name" (select)="onSelectUser($event)"/>
     </li>
     <li>
-      <app-user [avatar]="users[2].avatar" [name]="users[0].name"/>
+      <app-user [id]="users[2].id" [avatar]="users[2].avatar" [name]="users[0].name" (select)="onSelectUser($event)"/>
     </li>
     <li>
-      <app-user [avatar]="users[3].avatar" [name]="users[0].name"/>
+      <app-user [id]="users[3].id" [avatar]="users[3].avatar" [name]="users[0].name" (select)="onSelectUser($event)"/>
     </li>
   </ul>
+
+  <!-- TASK OF THE USER NEXT TO UL LIST -->
+
 </main>
 
 <!-- If you have a component that doesn't have anything between it's opening and closing tag which neither the header nor the user component have and we will learn how we could build Components that do accept content between their tags later.
  
 But if we have components that don't have anything between their tags, we can simplify this code and simply write the self-closing Components like this "<app-user />"-->
+
+<!-- $event: This variable is not just available when working with custom events! It can also be used on built-in events (like "click") to get hold of potentially emitted values -->
+
+<!-- $event variable will then fold than data, the value that was emitted by the event that you're listening to -->

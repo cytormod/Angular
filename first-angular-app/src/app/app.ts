@@ -17,7 +17,12 @@ import { DUMMY_USERS } from './dummy-users';
 
 export class App {
   users = DUMMY_USERS;
-  
+
+  onSelectUser(id: string) {
+    console.log('Selected user with id ' + id);
+    
+  }
+
 }
 
 // The idea of the Angular is that you build the tree of componenets where you have one component, the ROOT Component at the top, and you have other components nested inside of that components.
