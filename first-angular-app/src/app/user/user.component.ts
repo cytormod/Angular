@@ -48,7 +48,7 @@
 // How one would accept inputs with signals, so that we do know about both approaches. 
 // With the Upper-case I it's decorator, and with the lowercase "i" it is a special function.
 // One can Replace the Input decorator by still adding properties with the intended names like avatar  as we did it before. But instead of adding a Decorator in front of them, we can now just assign the initial value to these properties. and the value is the result of calling that input function, which internally tells Angular this Avatar Property should be an input to this component, so that it should be set as an attribute, when that component is used
-import { Component, Input, computed, input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, computed, input, Output, EventEmitter, output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -88,8 +88,11 @@ export class UserComponent {
   @Input ({ required: true }) name!: string;
   @Output() select = new EventEmitter() // select property will receive the innital 
   // value. The Instance of the EventEmitter class we're creating here. So this EventEmitter Object  we're getting here in the end will then allow us to emit emit custom values throught the select property, to any parent component that's interested. 
-
   // we want to pass the information that a specific user was selected to the component that's using the UserComponent.
+
+  // ! Currently we will be using Output decorator, because it is widely used so far
+  // select = output<string>(); // select function under the Hood stores the EventEmitter, so one does not need to explicilty create a new EventEmitter on one own.
+  // ! Also, here the output function does not create any kind of signal
 
   get imagePath() {
     return 'assets/users/' + this.avatar;

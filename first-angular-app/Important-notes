@@ -7,7 +7,12 @@ You are dealing with containers that contain values and that notify Angular when
 
 Being able to accept inputs is imp feature and concept in Angular components,because it allows you to reuse components with different data. But Custom components also often need to emit custom events and not just accept inputs. So they need to prosuce outputs as well.
 
+<!-- ? Why does the function output exists, if the Output Decorator is same as the output function? -->
+
+Mostly, so that if you were using the input function for registering the inputs instead of that input Decorator, that if you were doing that than you could use the output function. So, you don't need any decorators at all, neither for inputs nor for outputs inside of that component, besides the component decorator, you still need that. But no Decorator would be needed inside of that component then.
+In addition output function is shorter than the Output Decorator as it includes EvenEmitter inside it.
+
 <!-- TODO: GAIN DEPTH KNOWLEDGE ON -->
 Input Decorators and input Signals
 Output Properties.
-How one can Emit his/her own Events with the help of output and how one can then handle them and also get access to the emmitted data
+How one can Emit his/her own Events with the help of output and how one can then handle them and also get access to the emmitted data, EventEmitter, Output decorator
