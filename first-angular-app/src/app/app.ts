@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
+import { DUMMY_USERS } from './dummy-users';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,13 @@ import { UserComponent } from './user/user.component';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+// export class App {
+//   protected readonly title = signal('first-angular-app');
+// }
+
 export class App {
-  protected readonly title = signal('first-angular-app');
+  users = DUMMY_USERS;
+  
 }
 
 // The idea of the Angular is that you build the tree of componenets where you have one component, the ROOT Component at the top, and you have other components nested inside of that components.
