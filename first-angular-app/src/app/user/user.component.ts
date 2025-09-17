@@ -83,9 +83,16 @@ import { Component, Input, computed, input, Output, EventEmitter, output } from 
 
 // !!! JUST USE DECORATOR FOR NOW 
 export class UserComponent {
-  @Input({required: true}) id!: string;
-  @Input ({required: true}) avatar!: string;
-  @Input ({ required: true }) name!: string;
+  // @Input({required: true}) id!: string;
+  // @Input ({required: true}) avatar!: string;
+  // @Input ({ required: true }) name!: string;
+
+  @Input({required: true}) user!: {
+    id: string;
+    avatar: string;
+    name: string;
+  }
+
   @Output() select = new EventEmitter<string>() // select property will receive the innital 
   // value. The Instance of the EventEmitter class we're creating here. So this EventEmitter Object  we're getting here in the end will then allow us to emit emit custom values throught the select property, to any parent component that's interested. 
   // we want to pass the information that a specific user was selected to the component that's using the UserComponent.
@@ -95,11 +102,11 @@ export class UserComponent {
   // ! Also, here the output function does not create any kind of signal
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   onSelectUser() {
-    this.select.emit(this.id)
+    this.select.emit(this.user.id)
   }
 
 }
