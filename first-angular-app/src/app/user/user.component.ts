@@ -86,7 +86,7 @@ export class UserComponent {
   @Input({required: true}) id!: string;
   @Input ({required: true}) avatar!: string;
   @Input ({ required: true }) name!: string;
-  @Output() select = new EventEmitter() // select property will receive the innital 
+  @Output() select = new EventEmitter<string>() // select property will receive the innital 
   // value. The Instance of the EventEmitter class we're creating here. So this EventEmitter Object  we're getting here in the end will then allow us to emit emit custom values throught the select property, to any parent component that's interested. 
   // we want to pass the information that a specific user was selected to the component that's using the UserComponent.
 
