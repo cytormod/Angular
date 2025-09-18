@@ -67,6 +67,18 @@
     </p>
   }
 
+<!-- ! Legacy Angular Using ngFor & ngif -->
+ <!-- ngFor is called Structural directive -->
+ <!-- <li *ngFor="let user of users">
+  <app-user [user]="user" (select)="onSelectUser($event)"/>
+ </li>
+
+ <app-task *ngIf="selectedUser; else fallback" [name]="selectedUser!.name"/>
+ <ng-template #fallback>
+  <p id="fallback">Select a User to see their tasks!</p>
+ </ng-template> -->
+
+<!-- @@@ The more modern @for syntax does not need to be unlocked. It's not a structural directive but instead a template feature built into Angular same goes with @if -->
 
 </main>
 
