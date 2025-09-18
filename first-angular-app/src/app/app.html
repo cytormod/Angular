@@ -1,7 +1,19 @@
 <app-header />
 <main>
   <ul id="users">
-    <li>
+
+    <!-- //!Error For loop must have a track Expression -->
+
+    <!-- The track thing here is Angular internally wants to keep track of every item that is being rendered. -->
+    @for (user of users; track user.id) {
+      <li>
+      <app-user
+      [user]="user" (select)="onSelectUser($event)"
+      />
+      </li>
+    }
+
+    <!-- <li> -->
       <!-- <app-user 
       [id]="users[0].id" [avatar]="users[0].avatar" [name]="users[0].name" (select)="onSelectUser($event)"/>
     </li>
@@ -13,7 +25,10 @@
     </li>
     <li>
       <app-user [id]="users[3].id" [avatar]="users[3].avatar" [name]="users[3].name" (select)="onSelectUser($event)"/> -->
-    <li>
+
+<!-- ! This is not dynamically set -->
+
+    <!-- <li>
       <app-user 
         [user] = "users[0]"
         (select)="onSelectUser($event)"
@@ -39,7 +54,7 @@
         [user] = "users[3]"
         (select)="onSelectUser($event)"
         />
-    </li>
+    </li> -->
 
   </ul>
 
