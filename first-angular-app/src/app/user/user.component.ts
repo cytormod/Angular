@@ -50,6 +50,24 @@
 // One can Replace the Input decorator by still adding properties with the intended names like avatar  as we did it before. But instead of adding a Decorator in front of them, we can now just assign the initial value to these properties. and the value is the result of calling that input function, which internally tells Angular this Avatar Property should be an input to this component, so that it should be set as an attribute, when that component is used
 import { Component, Input, computed, input, Output, EventEmitter, output } from '@angular/core';
 
+// type User = {
+//     id: string;
+//     avatar: string;
+//     name: string;
+//   }
+
+  //Another alternative way to set type aka alias (above written), which is "INTERFACE" Another TS Feature.
+
+  // In Angular project it is a bit more common to see interfaces.
+
+  interface User {
+    id: string;
+    avatar: string;
+    name: string;
+  }
+
+  //One key difference to the type keyword is that with interface you can really only define object types, with the type keyword, you can also define other types.
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -87,11 +105,15 @@ export class UserComponent {
   // @Input ({required: true}) avatar!: string;
   // @Input ({ required: true }) name!: string;
 
-  @Input({required: true}) user!: {
-    id: string;
-    avatar: string;
-    name: string;
-  }
+  // @Input({required: true}) user!: {
+  //   id: string;
+  //   avatar: string;
+  //   name: string;
+  // }
+
+  // You can also outsource the above object, by grabbing the type you want to outsource by creating a so-called type alias
+
+  @Input({required: true}) user!: User;
 
   @Output() select = new EventEmitter<string>() // select property will receive the innital 
   // value. The Instance of the EventEmitter class we're creating here. So this EventEmitter Object  we're getting here in the end will then allow us to emit emit custom values throught the select property, to any parent component that's interested. 
