@@ -58,7 +58,7 @@
   </ul>
 
   @if (selectedUser) {
-    <app-tasks
+    <app-tasks [userId]="selectedUser.id"
       [name]="selectedUser.name"
     />
   } @else {
