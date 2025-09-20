@@ -116,7 +116,7 @@ export class UserComponent {
   // You can also outsource the above object, by grabbing the type you want to outsource by creating a so-called type alias
 
   @Input({required: true}) user!: User;
-
+  @Input({required: true}) selected!: boolean;
   @Output() select = new EventEmitter<string>() // select property will receive the innital 
   // value. The Instance of the EventEmitter class we're creating here. So this EventEmitter Object  we're getting here in the end will then allow us to emit emit custom values throught the select property, to any parent component that's interested. 
   // we want to pass the information that a specific user was selected to the component that's using the UserComponent.

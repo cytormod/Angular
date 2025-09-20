@@ -10,7 +10,7 @@ import { TaskComponent } from './tasks/task.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, UserComponent, Task, TaskComponent],
+  imports: [HeaderComponent, UserComponent, TaskComponent],
   // import: NgFor,
   templateUrl: './app.html',
   styleUrl: './app.css'
