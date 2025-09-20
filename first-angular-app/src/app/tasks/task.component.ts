@@ -42,4 +42,10 @@ export class TaskComponent {
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId)
   }
+
+  onCompleteTask(id: string){
+    // ! .filter() keeps elements where the condition is true. and that's why we are giving not equal sign here.
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
 }
