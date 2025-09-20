@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 import { Task } from './task/task.component';
+import { NewTaskComponent } from './new-task/new-task.component';
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [Task],
+  imports: [Task, NewTaskComponent],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css'
 })
@@ -14,6 +15,7 @@ export class TaskComponent {
   // We are giving as a option because, there might be chance, that one might be able to find the existed userId.
   @Input({required: true}) userId!:string;
   @Input({required: true}) name?: string;
+  isAddingTask: boolean = false; // Since We are assigning the initial value, TS is able to infer the type of value, we plan on storing on this property in general. It infers it is boolean
   tasks = [
     {
       id: 't1',
@@ -46,6 +48,14 @@ export class TaskComponent {
   onCompleteTask(id: string){
     // ! .filter() keeps elements where the condition is true. and that's why we are giving not equal sign here.
     this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
+  onStartAddTask() {
+    this.isAddingTask = true;
+  }
+
+  onCancelAddTask() {
+    this.isAddingTask = false;
   }
 
 }
