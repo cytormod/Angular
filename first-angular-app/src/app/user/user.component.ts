@@ -50,6 +50,8 @@
 // One can Replace the Input decorator by still adding properties with the intended names like avatar  as we did it before. But instead of adding a Decorator in front of them, we can now just assign the initial value to these properties. and the value is the result of calling that input function, which internally tells Angular this Avatar Property should be an input to this component, so that it should be set as an attribute, when that component is used
 import { Component, Input, computed, input, Output, EventEmitter, output } from '@angular/core';
 
+import { type User } from './user.model'
+
 // type User = {
 //     id: string;
 //     avatar: string;
@@ -60,11 +62,11 @@ import { Component, Input, computed, input, Output, EventEmitter, output } from 
 
   // In Angular project it is a bit more common to see interfaces.
 
-  interface User {
-    id: string;
-    avatar: string;
-    name: string;
-  }
+  // interface User {
+  //   id: string;
+  //   avatar: string;
+  //   name: string;
+  // }
 
   //One key difference to the type keyword is that with interface you can really only define object types, with the type keyword, you can also define other types.
 
