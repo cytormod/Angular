@@ -3,6 +3,7 @@ import { DUMMY_USERS } from '../dummy-users';
 import { Task } from './task/task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { type NewTaskData } from './task/task.model';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -42,8 +43,13 @@ export class TaskComponent {
   // },
   // ];
 
+  // private tasksService = new TasksService();
+
+  constructor(private taskService: TasksService) {}
+
   get selectedUserTasks() {
     return
+    // return this.tasksService.getUserTasks(this.userId)
     // return this.tasks.filter((task) => task.userId === this.userId)
   }
 

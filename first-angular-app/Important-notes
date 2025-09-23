@@ -16,3 +16,5 @@ In addition output function is shorter than the Output Decorator as it includes 
 Input Decorators and input Signals
 Output Properties.
 How one can Emit his/her own Events with the help of output and how one can then handle them and also get access to the emmitted data, EventEmitter, Output decorator
+
+59: Dependency Injection, reusable instances, Injectable({providedIn})
