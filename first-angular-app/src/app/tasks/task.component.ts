@@ -45,35 +45,35 @@ export class TaskComponent {
 
   // private tasksService = new TasksService();
 
-  constructor(private taskService: TasksService) {}
+  constructor(private tasksService: TasksService) {}
 
   get selectedUserTasks() {
-    return
-    // return this.tasksService.getUserTasks(this.userId)
+    
+    return this.tasksService.getUserTasks(this.userId)
     // return this.tasks.filter((task) => task.userId === this.userId)
   }
 
-  onCompleteTask(id: string){
-    // ! .filter() keeps elements where the condition is true. and that's why we are giving not equal sign here.
-    // this.tasks = this.tasks.filter((task) => task.id !== id);
-  }
+  // onCompleteTask(id: string){
+  //   // ! .filter() keeps elements where the condition is true. and that's why we are giving not equal sign here.
+  //   // this.tasks = this.tasks.filter((task) => task.id !== id);
+  // }
 
   onStartAddTask() {
     this.isAddingTask = true;
   }
 
-  onCancelAddTask() {
+  onCloseAddTask() {
     this.isAddingTask = false;
   }
 
-  onAddTask(taskData: NewTaskData) {
-    // this.tasks.unshift({
-    //   id: new Date().getTime().toString(),
-    //   userId: this.userId,
-    //   title: taskData.title,
-    //   summary: taskData.summary,
-    //   dueDate: taskData.date,
-    // })
-    this.isAddingTask = false;
-  }
+  // onAddTask(taskData: NewTaskData) {
+  //   // this.tasks.unshift({
+  //   //   id: new Date().getTime().toString(),
+  //   //   userId: this.userId,
+  //   //   title: taskData.title,
+  //   //   summary: taskData.summary,
+  //   //   dueDate: taskData.date,
+  //   // })
+  //   this.isAddingTask = false;
+  // }
 }
