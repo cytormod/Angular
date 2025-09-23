@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {type Taskk} from './task.model';
 import { CardComponent } from '../../shared/card/card';
+import { DatePipe } from '@angular/common';
 
 // interface Taskk{
 //   id: string;
@@ -12,7 +13,7 @@ import { CardComponent } from '../../shared/card/card';
 
 @Component({
   selector: 'app-task',
-  imports: [CardComponent],
+  imports: [CardComponent, DatePipe],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css'
 })
